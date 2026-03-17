@@ -1,0 +1,781 @@
+/* ============ GENERAL RESET & BASE STYLES ============ */
+/* This removes default browser styling and sets up consistent base styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root colors - change these to update the entire color scheme */
+:root {
+    /* Professional Color Palette */
+    --primary-color: #1e3a5f;      /* Dark Blue - Main brand color */
+    --secondary-color: #3498db;    /* Light Blue - Accent color */
+    --accent-color: #e74c3c;       /* Red - For highlights and CTAs */
+    --success-color: #27ae60;      /* Green - For positive actions */
+    --text-dark: #2c3e50;          /* Dark text color */
+    --text-light: #ecf0f1;         /* Light text color */
+    --bg-light: #f8f9fa;           /* Light background */
+    --bg-white: #ffffff;           /* White background */
+    --border-color: #ddd;          /* Border color */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    
+    /* Category Colors */
+    --geopolitics: #3498db;
+    --finance: #f39c12;
+    --technology: #9b59b6;
+    --crypto: #e74c3c;
+    --economy: #16a085;
+    --trending: #c0392b;
+}
+
+/* Body - Sets font and basic page styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* ============ HEADER STYLES ============ */
+/* The top header with logo and navigation */
+
+.header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo section */
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-top: 0.2rem;
+}
+
+/* Top navigation */
+.top-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.top-nav .nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.top-nav .nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* ============ MAIN CONTAINER & LAYOUT ============ */
+/* Flexbox layout for sidebar and main content */
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* ============ SIDEBAR STYLES ============ */
+/* Left navigation sidebar */
+
+.sidebar {
+    width: 280px;
+    /* Makes sidebar sticky - stays visible when scrolling */
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    background-color: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Search box styling */
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.search-btn {
+    padding: 0.75rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Sidebar title */
+.sidebar-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Navigation list */
+.nav-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.nav-item {
+    margin-bottom: 0.5rem;
+}
+
+.nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+    background-color: var(--bg-light);
+    color: var(--secondary-color);
+    padding-left: 1.5rem;
+}
+
+.nav-item .nav-link i {
+    font-size: 1.2rem;
+}
+
+/* Ask section */
+.ask-section {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.ask-section h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.ask-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.ask-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ============ MAIN CONTENT AREA ============ */
+/* The main area where videos and content are displayed */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Hero/Featured section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.hero-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.cta-btn {
+    padding: 0.75rem 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* Vlogs section */
+.vlogs-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* ============ VLOGS GRID - RESPONSIVE LAYOUT ============ */
+/* Grid for displaying video cards - adjusts number of columns based on screen size */
+
+.vlogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Video card styling */
+.vlog-card {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.vlog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Video thumbnail section */
+.vlog-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.vlog-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.vlog-card:hover .vlog-thumbnail img {
+    transform: scale(1.05);
+}
+
+/* Play button overlay */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.vlog-card:hover .play-btn {
+    opacity: 1;
+}
+
+/* Video info section */
+.vlog-info {
+    padding: 1.5rem;
+}
+
+/* Category badge */
+.category-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.category-badge.geopolitics {
+    background-color: var(--geopolitics);
+}
+
+.category-badge.finance {
+    background-color: var(--finance);
+}
+
+.category-badge.technology {
+    background-color: var(--technology);
+}
+
+.category-badge.crypto {
+    background-color: var(--crypto);
+}
+
+.category-badge.economy {
+    background-color: var(--economy);
+}
+
+.category-badge.trending {
+    background-color: var(--trending);
+}
+
+/* Video title */
+.vlog-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+/* Video description */
+.vlog-description {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Video metadata (views, date) */
+.vlog-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #95a5a6;
+}
+
+.vlog-meta .views i {
+    margin-right: 0.3rem;
+}
+
+/* Action buttons (Like, Share) */
+.vlog-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 0.5rem;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.action-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+/* Load more button */
+.load-more-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.load-more-btn {
+    padding: 0.75rem 2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* ============ MODAL STYLES ============ */
+/* Popup for asking questions */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: var(--bg-white);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ============ FOOTER STYLES ============ */
+/* Bottom section of the website */
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 3rem 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Social media links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+/* Styles for tablets and smaller screens */
+
+@media (max-width: 1024px) {
+    /* Reduce container padding on tablets */
+    .container {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    /* Reduce sidebar width */
+    .sidebar {
+        width: 240px;
+    }
+    
+    /* Adjust grid for tablets */
+    .vlogs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+/* Styles for mobile phones */
+@media (max-width: 768px) {
+    /* Stack header elements vertically on mobile */
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Hide top nav on mobile, show only logo */
+    .top-nav {
+        display: none;
+    }
+    
+    /* Stack sidebar and main content vertically */
+    .container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    /* Sidebar becomes full width on mobile */
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+    
+    /* Hero section text size on mobile */
+    .hero-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    /* Grid becomes single column on mobile */
+    .vlogs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Adjust modal width on mobile */
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+    
+    /* Footer grid adjustment */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styles for very small phones */
+@media (max-width: 480px) {
+    /* Reduce all padding on very small screens */
+    .sidebar {
+        padding: 1rem;
+    }
+    
+    .vlog-info {
+        padding: 1rem;
+    }
+    
+    /* Reduce font sizes */
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .vlog-title {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============ PRINT STYLES ============ */
+/* How the website looks when printed */
+
+@media print {
+    /* Hide interactive elements when printing */
+    .sidebar,
+    .header,
+    .footer,
+    .ask-section,
+    .action-btn {
+        display: none;
+    }
+    
+    /* Adjust main content for printing */
+    .main-content {
+        width: 100%;
+    }
+    
+    /* Print friendly colors */
+    body {
+        background-color: white;
+    }
+}
