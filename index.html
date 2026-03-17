@@ -3,61 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Blog | Tech, Finance & Geopolitics</title>
+    <title>Geonometrics | Tech, Finance & Geopolitics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .category-tech { border-left: 4px solid #3b82f6; }
-        .category-finance { border-left: 4px solid #10b981; }
-        .category-geopolitics { border-left: 4px solid #ef4444; }
+        html { scroll-behavior: smooth; }
+        .blog-card { transition: transform 0.2s; }
+        .blog-card:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-10">
-        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight">INSIGHTS</a>
-            <div class="space-x-6 text-sm font-medium">
-                <a href="#tech" class="hover:text-blue-600">Tech</a>
-                <a href="#finance" class="hover:text-green-600">Finance</a>
-                <a href="#geopolitics" class="hover:text-red-600">Geopolitics</a>
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-tighter text-blue-600">GEONOMETRICS</a>
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
+                <a href="#tech" class="hover:text-blue-600 transition">Tech</a>
+                <a href="#finance" class="hover:text-green-600 transition">Finance</a>
+                <a href="#geopolitics" class="hover:text-red-600 transition">Geopolitics</a>
             </div>
         </div>
     </nav>
 
-    <header class="max-w-5xl mx-auto px-4 py-16 text-center">
-        <h1 class="text-5xl font-extrabold mb-4">Tech, Money, and the World.</h1>
-        <p class="text-xl text-gray-600">Exploring the intersection of innovation, markets, and global affairs.</p>
+    <header class="max-w-4xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-6xl font-extrabold tracking-tight mb-6">Navigating the <span class="text-blue-600">Digital</span> and <span class="text-red-600">Global</span> Frontier.</h1>
+        <p class="text-xl text-gray-500 leading-relaxed">Deep dives into emerging technology, market shifts, and the chess match of global affairs.</p>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 pb-20">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            
-            <article class="bg-white p-6 rounded-xl shadow-sm category-tech">
-                <span class="text-xs font-bold uppercase text-blue-600">Tech</span>
-                <h2 class="text-xl font-bold mt-2 mb-3">The Future of Generative AI in 2026</h2>
-                <p class="text-gray-600 text-sm mb-4">How LLMs are evolving from chat interfaces to autonomous agents...</p>
-                <a href="#" class="text-sm font-semibold text-gray-900 hover:underline">Read More →</a>
-            </article>
+    <main class="max-w-6xl mx-auto px-6 pb-24 space-y-20">
 
-            <article class="bg-white p-6 rounded-xl shadow-sm category-finance">
-                <span class="text-xs font-bold uppercase text-green-600">Finance</span>
-                <h2 class="text-xl font-bold mt-2 mb-3">Global Inflation Trends</h2>
-                <p class="text-gray-600 text-sm mb-4">Analyzing how interest rates are shaping the next decade of investment...</p>
-<a href="posts/first-tech-blog.html" class="text-sm font-semibold text-gray-900 hover:underline">Read More →</a>
-            </article>
+        <section id="tech">
+            <div class="flex items-center space-x-4 mb-8">
+                <h2 class="text-3xl font-bold">Technology</h2>
+                <div class="h-1 flex-grow bg-blue-100"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <article class="blog-card bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-500">
+                    <span class="text-blue-600 font-bold text-xs uppercase">Featured</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">The Future of Generative AI in 2026</h3>
+                    <p class="text-gray-600 mb-6">An exploration of how autonomous agents are replacing simple chat interfaces...</p>
+                    <a href="posts/first-tech-blog.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Read Article</a>
+                </article>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-blue-500">
+                        <h4 class="font-bold">Quantum Computing: The 2026 Milestone</h4>
+                        <p class="text-sm text-gray-500">Coming soon...</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-blue-500">
+                        <h4 class="font-bold">Privacy in the Age of Neural Links</h4>
+                        <p class="text-sm text-gray-500">Coming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <article class="bg-white p-6 rounded-xl shadow-sm category-geopolitics">
-                <span class="text-xs font-bold uppercase text-red-600">Geopolitics</span>
-                <h2 class="text-xl font-bold mt-2 mb-3">Supply Chains & Statecraft</h2>
-                <p class="text-gray-600 text-sm mb-4">Why semiconductors are the new oil in the modern diplomatic landscape...</p>
-                <a href="#" class="text-sm font-semibold text-gray-900 hover:underline">Read More →</a>
-            </article>
+        <section id="finance">
+            <div class="flex items-center space-x-4 mb-8">
+                <h2 class="text-3xl font-bold">Finance</h2>
+                <div class="h-1 flex-grow bg-green-100"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <article class="blog-card bg-white p-6 rounded-xl shadow-sm border-b-4 border-green-500">
+                    <h3 class="font-bold text-lg mb-2">Global Inflation Analysis</h3>
+                    <p class="text-sm text-gray-600 mb-4">Why interest rates are staying higher for longer than expected.</p>
+                    <a href="#" class="text-green-600 font-bold text-sm">Read More →</a>
+                </article>
+                <article class="blog-card bg-white p-6 rounded-xl shadow-sm border-b-4 border-green-500">
+                    <h3 class="font-bold text-lg mb-2">The Digital Yuan vs. The Dollar</h3>
+                    <p class="text-sm text-gray-600 mb-4">The rise of CBDCs and the future of global reserve currencies.</p>
+                    <a href="#" class="text-green-600 font-bold text-sm">Read More →</a>
+                </article>
+                <article class="blog-card bg-white p-6 rounded-xl shadow-sm border-b-4 border-green-500">
+                    <h3 class="font-bold text-lg mb-2">Post-Crypto: What's Next?</h3>
+                    <p class="text-sm text-gray-600 mb-4">Institutionalized blockchain and the death of meme coins.</p>
+                    <a href="#" class="text-green-600 font-bold text-sm">Read More →</a>
+                </article>
+            </div>
+        </section>
 
-        </div>
+        <section id="geopolitics">
+            <div class="flex items-center space-x-4 mb-8">
+                <h2 class="text-3xl font-bold">Geopolitical Affairs</h2>
+                <div class="h-1 flex-grow bg-red-100"></div>
+            </div>
+            <div class="bg-gray-900 text-white p-10 rounded-3xl">
+                <div class="max-w-2xl">
+                    <span class="text-red-500 font-bold uppercase tracking-widest text-xs">Analysis</span>
+                    <h3 class="text-3xl font-bold mt-2 mb-4">The Semiconductor Cold War</h3>
+                    <p class="text-gray-400 mb-6">Why geography still matters in a digital world—the battle for TSMC and high-end fabrication.</p>
+                    <a href="#" class="inline-block border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition">Full Report</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="border-t py-10 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Personal Blog. Built with GitHub Pages.</p>
+    <footer class="bg-white border-t py-12">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 GEONOMETRICS. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="text-gray-400 hover:text-blue-600">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900">LinkedIn</a>
+                <a href="mailto:contact@geonometrics.me" class="text-gray-400 hover:text-red-500">Contact</a>
+            </div>
+        </div>
     </footer>
 
 </body>
