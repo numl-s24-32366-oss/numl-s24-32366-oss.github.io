@@ -1,368 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags for browser and SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Geonometics - Learn Geopolitics, Finance & Tech in an easy way">
-    <meta name="keywords" content="geopolitics, finance, tech education, vlogs">
-    <title>Geonometics - Geopolitics, Finance & Tech Learning</title>
-    
-    <!-- Link to external CSS file -->
+    <title>Geonometrics - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <!-- ============ HEADER SECTION ============ -->
-    <header class="header">
-        <div class="header-content">
-            <!-- Logo -->
-            <div class="logo">
-                <h1>GEONOMETICS</h1>
-                <p>Learn • Understand • Grow</p>
-            </div>
-            
-            <!-- Top Navigation Bar -->
-            <nav class="top-nav">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">Geonometrics</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+                <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
+                <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+                <li><a href="posts/first-tech-blog.html" class="hover:text-blue-600 transition">Blog</a></li>
+            </ul>
+            <button class="md:hidden" id="menu-toggle">☰</button>
         </div>
-    </header>
+        <ul class="md:hidden hidden" id="mobile-menu">
+            <li><a href="#about" class="block px-4 py-2 hover:bg-gray-100">About</a></li>
+            <li><a href="#projects" class="block px-4 py-2 hover:bg-gray-100">Projects</a></li>
+            <li><a href="#skills" class="block px-4 py-2 hover:bg-gray-100">Skills</a></li>
+            <li><a href="#contact" class="block px-4 py-2 hover:bg-gray-100">Contact</a></li>
+            <li><a href="posts/first-tech-blog.html" class="block px-4 py-2 hover:bg-gray-100">Blog</a></li>
+        </ul>
+    </nav>
 
-    <!-- ============ MAIN CONTAINER ============ -->
-    <div class="container">
-        
-        <!-- ============ LEFT SIDEBAR NAVIGATION ============ -->
-        <aside class="sidebar">
-            <!-- Search Bar -->
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search topics..." class="search-input">
-                <button class="search-btn" onclick="searchTopics()">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-
-            <!-- Sidebar Navigation Menu -->
-            <nav class="sidebar-nav">
-                <h3 class="sidebar-title">Categories</h3>
-                
-                <ul class="nav-list">
-                    <!-- Each item is a category that users can click -->
-                    <li class="nav-item">
-                        <a href="#geopolitics" class="nav-link" onclick="filterContent('geopolitics')">
-                            <i class="fas fa-globe"></i> Geopolitics
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#finance" class="nav-link" onclick="filterContent('finance')">
-                            <i class="fas fa-chart-line"></i> Finance
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#technology" class="nav-link" onclick="filterContent('technology')">
-                            <i class="fas fa-laptop-code"></i> Technology
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#crypto" class="nav-link" onclick="filterContent('crypto')">
-                            <i class="fas fa-coins"></i> Cryptocurrency
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#economy" class="nav-link" onclick="filterContent('economy')">
-                            <i class="fas fa-building"></i> Economy
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#trending" class="nav-link" onclick="filterContent('trending')">
-                            <i class="fas fa-fire"></i> Trending
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Question Section -->
-            <div class="ask-section">
-                <h3>Ask a Question</h3>
-                <button class="ask-btn" onclick="openAskModal()">
-                    <i class="fas fa-question-circle"></i> Ask Question
-                </button>
-            </div>
-        </aside>
-
-        <!-- ============ MAIN CONTENT AREA ============ -->
-        <main class="main-content">
-            
-            <!-- ============ FEATURED/HERO SECTION ============ -->
-            <section class="hero-section">
-                <h2>Welcome to Geonometics</h2>
-                <p>Master Geopolitics, Finance & Tech - All in One Place</p>
-                <button class="cta-btn" onclick="scrollToContent()">Explore Content</button>
-            </section>
-
-            <!-- ============ VLOGS/VIDEOS GRID ============ -->
-            <section class="vlogs-section">
-                <h2 class="section-title">Latest Vlogs & Videos</h2>
-                
-                <!-- Grid container for video cards -->
-                <div class="vlogs-grid" id="vlogsGrid">
-                    <!-- VIDEO CARD 1 -->
-                    <article class="vlog-card">
-                        <!-- Video Thumbnail with play button -->
-                        <div class="vlog-thumbnail">
-                            <img src="https://via.placeholder.com/300x200?text=Geopolitics+101" alt="Geopolitics 101">
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Video Info -->
-                        <div class="vlog-info">
-                            <span class="category-badge geopolitics">Geopolitics</span>
-                            <h3 class="vlog-title">Understanding Global Politics in 2026</h3>
-                            <p class="vlog-description">Learn the basics of geopolitics and how nations interact on the world stage.</p>
-                            
-                            <!-- Metadata -->
-                            <div class="vlog-meta">
-                                <span class="views"><i class="fas fa-eye"></i> 1.2K views</span>
-                                <span class="date">2 days ago</span>
-                            </div>
-                            
-                            <!-- Interaction buttons -->
-                            <div class="vlog-actions">
-                                <button class="action-btn" onclick="likeVideo(this)">
-                                    <i class="far fa-heart"></i> Like
-                                </button>
-                                <button class="action-btn" onclick="shareVideo()">
-                                    <i class="fas fa-share-alt"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- VIDEO CARD 2 -->
-                    <article class="vlog-card">
-                        <div class="vlog-thumbnail">
-                            <img src="https://via.placeholder.com/300x200?text=Stock+Market" alt="Stock Market Basics">
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="vlog-info">
-                            <span class="category-badge finance">Finance</span>
-                            <h3 class="vlog-title">Stock Market Basics for Beginners</h3>
-                            <p class="vlog-description">Everything you need to know about investing in stocks safely and wisely.</p>
-                            <div class="vlog-meta">
-                                <span class="views"><i class="fas fa-eye"></i> 2.5K views</span>
-                                <span class="date">5 days ago</span>
-                            </div>
-                            <div class="vlog-actions">
-                                <button class="action-btn" onclick="likeVideo(this)">
-                                    <i class="far fa-heart"></i> Like
-                                </button>
-                                <button class="action-btn" onclick="shareVideo()">
-                                    <i class="fas fa-share-alt"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- VIDEO CARD 3 -->
-                    <article class="vlog-card">
-                        <div class="vlog-thumbnail">
-                            <img src="https://via.placeholder.com/300x200?text=AI+Revolution" alt="AI Revolution">
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="vlog-info">
-                            <span class="category-badge technology">Technology</span>
-                            <h3 class="vlog-title">The AI Revolution Explained</h3>
-                            <p class="vlog-description">How artificial intelligence is changing the world and what you need to know.</p>
-                            <div class="vlog-meta">
-                                <span class="views"><i class="fas fa-eye"></i> 3.1K views</span>
-                                <span class="date">1 week ago</span>
-                            </div>
-                            <div class="vlog-actions">
-                                <button class="action-btn" onclick="likeVideo(this)">
-                                    <i class="far fa-heart"></i> Like
-                                </button>
-                                <button class="action-btn" onclick="shareVideo()">
-                                    <i class="fas fa-share-alt"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- VIDEO CARD 4 -->
-                    <article class="vlog-card">
-                        <div class="vlog-thumbnail">
-                            <img src="https://via.placeholder.com/300x200?text=Crypto+Basics" alt="Cryptocurrency Basics">
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="vlog-info">
-                            <span class="category-badge crypto">Crypto</span>
-                            <h3 class="vlog-title">Cryptocurrency Explained Simply</h3>
-                            <p class="vlog-description">A beginner's guide to understanding Bitcoin, Ethereum, and blockchain technology.</p>
-                            <div class="vlog-meta">
-                                <span class="views"><i class="fas fa-eye"></i> 4.8K views</span>
-                                <span class="date">3 days ago</span>
-                            </div>
-                            <div class="vlog-actions">
-                                <button class="action-btn" onclick="likeVideo(this)">
-                                    <i class="far fa-heart"></i> Like
-                                </button>
-                                <button class="action-btn" onclick="shareVideo()">
-                                    <i class="fas fa-share-alt"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- VIDEO CARD 5 -->
-                    <article class="vlog-card">
-                        <div class="vlog-thumbnail">
-                            <img src="https://via.placeholder.com/300x200?text=Trade+Wars" alt="Trade Wars Impact">
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="vlog-info">
-                            <span class="category-badge geopolitics">Geopolitics</span>
-                            <h3 class="vlog-title">Global Trade Wars Impact</h3>
-                            <p class="vlog-description">Understanding how international trade conflicts affect economies and markets.</p>
-                            <div class="vlog-meta">
-                                <span class="views"><i class="fas fa-eye"></i> 890 views</span>
-                                <span class="date">1 week ago</span>
-                            </div>
-                            <div class="vlog-actions">
-                                <button class="action-btn" onclick="likeVideo(this)">
-                                    <i class="far fa-heart"></i> Like
-                                </button>
-                                <button class="action-btn" onclick="shareVideo()">
-                                    <i class="fas fa-share-alt"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- VIDEO CARD 6 -->
-                    <article class="vlog-card">
-                        <div class="vlog-thumbnail">
-                            <img src="https://via.placeholder.com/300x200?text=5G+Technology" alt="5G Technology">
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="vlog-info">
-                            <span class="category-badge technology">Technology</span>
-                            <h3 class="vlog-title">5G Technology: The Future of Communication</h3>
-                            <p class="vlog-description">How 5G networks will transform internet speed and connectivity worldwide.</p>
-                            <div class="vlog-meta">
-                                <span class="views"><i class="fas fa-eye"></i> 1.6K views</span>
-                                <span class="date">2 weeks ago</span>
-                            </div>
-                            <div class="vlog-actions">
-                                <button class="action-btn" onclick="likeVideo(this)">
-                                    <i class="far fa-heart"></i> Like
-                                </button>
-                                <button class="action-btn" onclick="shareVideo()">
-                                    <i class="fas fa-share-alt"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Load More Button -->
-            <div class="load-more-container">
-                <button class="load-more-btn" onclick="loadMoreVideos()">Load More Videos</button>
-            </div>
-        </main>
-    </div>
-
-    <!-- ============ MODAL FOR ASKING QUESTIONS ============ -->
-    <div id="askModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeAskModal()">&times;</span>
-            <h2>Ask Your Question</h2>
-            
-            <!-- Form for users to ask questions -->
-            <form class="question-form" onsubmit="submitQuestion(event)">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" required placeholder="Enter your name">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" required placeholder="Enter your email">
-                </div>
-
-                <div class="form-group">
-                    <label for="category">Select Category</label>
-                    <select id="category" required>
-                        <option value="">Choose a category</option>
-                        <option value="geopolitics">Geopolitics</option>
-                        <option value="finance">Finance</option>
-                        <option value="technology">Technology</option>
-                        <option value="crypto">Cryptocurrency</option>
-                        <option value="economy">Economy</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="question">Your Question</label>
-                    <textarea id="question" required placeholder="Type your question here..." rows="6"></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Submit Question</button>
-            </form>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to Geonometrics</h1>
+            <p class="text-xl mb-8">Innovative solutions in technology and data</p>
+            <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition btn-primary">Get In Touch</a>
         </div>
-    </div>
+    </section>
 
-    <!-- ============ FOOTER SECTION ============ -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>About Geonometics</h4>
-                <p>Geonometics is your one-stop destination for learning about geopolitics, finance, and technology in an easy and engaging way.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://via.placeholder.com/400x400" alt="Profile Picture" class="rounded-full mx-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <p class="text-lg leading-relaxed mb-6">
+                        Hi, I'm Geonometrics. I'm passionate about technology, data analysis, and creating innovative solutions.
+                        With expertise in various programming languages and frameworks, I strive to build impactful projects
+                        that make a difference.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        When I'm not coding, you can find me exploring new technologies, writing about AI and tech trends,
+                        or contributing to open-source projects.
+                    </p>
                 </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Geonometics. All rights reserved. | Designed for your learning journey</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-100 py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
+                    <img src="https://via.placeholder.com/400x300" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project One</h3>
+                        <p class="text-gray-600 mb-4">A brief description of your first project. What technologies did you use? What problem did it solve?</p>
+                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
+                    <img src="https://via.placeholder.com/400x300" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Two</h3>
+                        <p class="text-gray-600 mb-4">Description of your second project. Highlight the key features and technologies involved.</p>
+                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
+                    <img src="https://via.placeholder.com/400x300" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Tech Blog</h3>
+                        <p class="text-gray-600 mb-4">My personal blog where I share insights on AI, technology trends, and programming tips.</p>
+                        <a href="posts/first-tech-blog.html" class="text-blue-600 hover:underline">Read Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills & Technologies</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💻</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Programming</h3>
+                    <p class="text-gray-600">Python, JavaScript, HTML/CSS</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🤖</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">AI & ML</h3>
+                    <p class="text-gray-600">Machine Learning, Data Analysis</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🌐</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Web Development</h3>
+                    <p class="text-gray-600">React, Node.js, Tailwind CSS</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yellow-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Data Science</h3>
+                    <p class="text-gray-600">Pandas, NumPy, Visualization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="max-w-md mx-auto">
+                <form class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>&copy; 2026 Geonometrics. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ============ LINK TO JAVASCRIPT FILE ============ -->
     <script src="script.js"></script>
 </body>
 </html>
