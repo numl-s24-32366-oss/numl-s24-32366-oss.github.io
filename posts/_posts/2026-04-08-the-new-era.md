@@ -1,0 +1,14 @@
+---
+layout: post
+title: "The Geopolitical Shift of 2026"
+date: 2026-04-08
+---
+
+# Why Geopolitics Matters Now
+
+In this first post, I want to discuss why I started **Geonometics**. 
+Global power is shifting, and we need better metrics to understand it.
+
+> "Geography is the only factor in foreign policy that does not change."
+
+Check back soon for a deep dive into trade routes!
